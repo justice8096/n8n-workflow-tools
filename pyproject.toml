@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.backends"
+
+[project]
+name = "n8n-workflow-tools"
+version = "0.1.0"
+description = "Migrate hardcoded paths in n8n workflows to config-driven portable format"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Justice" }]
+
+[project.scripts]
+n8n-migrate = "n8n_workflow_tools.cli:main"
