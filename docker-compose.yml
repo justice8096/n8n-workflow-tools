@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  n8n-migrate:
+    build: .
+    container_name: n8n-workflow-tools
+    volumes:
+      - ${WORKFLOWS_DIR:-.}/workflows:/data/workflows
+      - ${CONFIG_DIR:-.}/config:/data/config
+    # Example commands:
+    # Scan:    docker compose run n8n-migrate scan /data/workflows
+    # Config:  docker compose run n8n-migrate generate-config /data/workflows -o /data/config/paths.json
+    # Apply:   docker compose run n8n-migrate apply /data/workflows --config /data/config/paths.json
